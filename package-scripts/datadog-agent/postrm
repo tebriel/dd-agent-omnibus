@@ -24,6 +24,10 @@ elif [ -f /etc/redhat-release ] || [ "$LINUX_DISTRIBUTION" == "RedHat" ] || [ "$
       *) 
         ;;
     esac
+
+elif [ -f /etc/Eos-release ]; then
+  echo "Nothing to do here"
+
 else
       echo "[ ${Red}FAILED ${RCol}]\tYour system is currently not supported by this script.";
       exit 1;

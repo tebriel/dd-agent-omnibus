@@ -48,11 +48,18 @@ if [ -f /etc/debian_version ] || [ "$LINUX_DISTRIBUTION" == "Debian" ] || [ "$LI
 fi
 
 # Set proper rights to the dd-agent user
-chown -R dd-agent:root ${CONFIG_DIR}
-chown -R dd-agent:root ${LOG_DIR}
+# On arista EOS though, the agent runs as root
 chown root:root /etc/init.d/datadog-agent
 chown -R root:root /opt/datadog-agent
-chown -R dd-agent:root ${RUN_DIR}
+
+if ! [ -f /etc/Eos-release ]; then
+    chown -R dd-agent:root ${CONFIG_DIR}
+    chown -R dd-agent:root ${LOG_DIR}
+    chown -R dd-agent:root ${RUN_DIR}
+else
+    chown -R root:root ${CONFIG_DIR}
+    chown -R root:root ${LOG_DIR}
+fi
 
 if command -v chkconfig >/dev/null 2>&1; then
     chkconfig --add datadog-agent

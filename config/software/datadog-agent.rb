@@ -1,6 +1,8 @@
 name 'datadog-agent'
 
 local_agent_repo = ENV['LOCAL_AGENT_REPO']
+use_root_supervisor = ENV['USE_ROOT_SUPERVISOR']
+
 if local_agent_repo.nil? || local_agent_repo.empty?
   source git: 'https://github.com/DataDog/dd-agent.git'
 else
@@ -36,15 +38,28 @@ build do
   # Configuration files
   command 'mkdir -p /etc/dd-agent'
   if Ohai['platform_family'] == 'rhel'
-    command 'cp packaging/centos/datadog-agent.init /etc/init.d/datadog-agent'
+    if use_root_supervisor.nil? || use_root_supervisor.empty?
+      command 'cp packaging/centos/datadog-agent.init /etc/init.d/datadog-agent'
+    else
+      command 'cp packaging/centos/datadog-agent_root.init /etc/init.d/datadog-agent'
+    end
   elsif Ohai['platform_family'] == 'debian'
-    command 'cp packaging/debian/datadog-agent.init /etc/init.d/datadog-agent'
+    if use_root_supervisor.nil? || use_root_supervisor.empty?
+      command 'cp packaging/debian/datadog-agent.init /etc/init.d/datadog-agent'
+    else
+      command 'cp packaging/debian/datadog-agent_root.init /etc/init.d/datadog-agent'
+    end
     command 'mkdir -p /lib/systemd/system'
     command 'cp packaging/debian/datadog-agent.service /lib/systemd/system/datadog-agent.service'
     command 'cp packaging/debian/start_agent.sh /opt/datadog-agent/bin/start_agent.sh'
     command 'chmod 755 /opt/datadog-agent/bin/start_agent.sh'
   end
-  command 'cp packaging/supervisor.conf /etc/dd-agent/supervisor.conf'
+
+  if use_root_supervisor.nil? || use_root_supervisor.empty?
+    command 'cp packaging/supervisor.conf /etc/dd-agent/supervisor.conf'
+  else
+    command 'cp packaging/supervisor_root.conf /etc/dd-agent/supervisor.conf'
+  end
   command 'cp datadog.conf.example /etc/dd-agent/datadog.conf.example'
   command 'cp -R conf.d /etc/dd-agent/'
   command 'mkdir -p /etc/dd-agent/checks.d/'
