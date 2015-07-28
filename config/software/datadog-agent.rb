@@ -143,5 +143,4 @@ build do
     copy 'packaging/osx/com.datadoghq.Agent.plist.example', "#{install_dir}/etc/"
 
   end
->>>>>>> master
 end
