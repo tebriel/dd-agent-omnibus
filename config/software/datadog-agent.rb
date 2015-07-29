@@ -42,10 +42,11 @@ build do
     mkdir '/etc/dd-agent'
       if ohai['platform_family'] == 'rhel'
         if use_root_supervisor.nil? || use_root_supervisor.empty?
-          copy 'packaging/centos/datadog-agent.init', '/etc/init.d/datadog-agent'
+          copy 'packaging/centos/datadog-agent.init', '/etc/rc.d/init.d/datadog-agent'
         else
-          copy 'packaging/centos/datadog-agent_root.init', '/etc/init.d/datadog-agent'
+          copy 'packaging/centos/datadog-agent_root.init', '/etc/rc.d/init.d/datadog-agent'
         end
+
       elsif ohai['platform_family'] == 'debian'
         if use_root_supervisor.nil? || use_root_supervisor.empty?
           copy 'packaging/debian/datadog-agent.init', '/etc/init.d/datadog-agent'
