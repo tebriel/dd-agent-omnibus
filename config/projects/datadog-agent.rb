@@ -155,6 +155,7 @@ dependency 'snakebite'
 # Datadog gohai is built last before dataadog agent since it should always
 # be rebuilt (if put above, it would dirty the cache of the dependencies below
 # and trigger a useless rebuild of many packages)
+override 'datadog-gohai', version: "olivielpeau/version"
 dependency 'datadog-gohai'
 
 # Datadog agent
