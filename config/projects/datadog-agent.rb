@@ -134,6 +134,7 @@ dependency 'zlib'
 
 # Check dependencies
 dependency 'adodbapi'
+dependency 'datadogpy'
 dependency 'httplib2'
 dependency 'kafka-python'
 dependency 'kazoo'
