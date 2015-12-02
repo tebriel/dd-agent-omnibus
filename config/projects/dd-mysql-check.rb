@@ -14,13 +14,12 @@ build_version Omnibus::BuildVersion.semver
 # creates required build directories
 dependency 'preparation'
 
-# Datadog agent
-# dependency 'datadog-agent'
 
 dependency 'dd-mysql-check'
 
 # version manifest file
 dependency 'version-manifest'
 
-# exclude '\.git*'
+exclude '\.git*'
 exclude 'bundler\/git'
+# exclude
