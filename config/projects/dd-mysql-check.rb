@@ -16,10 +16,10 @@ dependency 'preparation'
 
 # Datadog agent
 # dependency 'datadog-agent'
-# dependency 'dd-mysql-check'
 
 dependency 'python'
 dependency 'pip'
+dependency 'dd-mysql-check'
 
 # version manifest file
 dependency 'version-manifest'
