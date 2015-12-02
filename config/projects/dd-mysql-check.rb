@@ -15,8 +15,11 @@ build_version Omnibus::BuildVersion.semver
 dependency 'preparation'
 
 # Datadog agent
-dependency 'datadog-agent'
-dependency 'dd-mysql-check'
+# dependency 'datadog-agent'
+# dependency 'dd-mysql-check'
+
+dependency 'python'
+dependency 'pip'
 
 # version manifest file
 dependency 'version-manifest'
