@@ -18,8 +18,8 @@ dependency 'preparation'
 # dependency 'datadog-agent'
 
 dependency 'python'
-dependency 'pip'
 dependency 'dd-mysql-check'
+dependency 'pip'
 
 # version manifest file
 dependency 'version-manifest'
