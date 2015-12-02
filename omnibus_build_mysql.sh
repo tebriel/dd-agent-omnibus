@@ -8,7 +8,6 @@
 
 PROJECT_DIR=dd-agent-omnibus
 PROJECT_NAME=datadog-agent
-INTEGRATION_NAME=dd-mysql-check
 LOG_LEVEL=${LOG_LEVEL:-"info"}
 OMNIBUS_BRANCH=${OMNIBUS_BRANCH:-"master"}
 OMNIBUS_BRANCH="tristan/playground"
