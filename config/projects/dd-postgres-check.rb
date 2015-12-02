@@ -1,6 +1,6 @@
 require "./lib/ostools.rb"
 
-name 'dd-mysql-check'
+name 'dd-postgres-check'
 maintainer 'Datadog Packages <package@datadoghq.com>'
 homepage 'http://www.datadoghq.com'
 install_dir '/opt/datadog-agent'
@@ -15,7 +15,7 @@ build_version Omnibus::BuildVersion.semver
 dependency 'preparation'
 
 
-dependency 'dd-mysql-check'
+dependency 'dd-postgres-check'
 
 # version manifest file
 dependency 'version-manifest'

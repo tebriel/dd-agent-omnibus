@@ -1,4 +1,4 @@
-name "dd-mysql-check"
+name "dd-postgres-check"
 default_version "0.0.1"
 
 dependency 'python'
