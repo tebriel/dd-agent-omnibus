@@ -24,5 +24,5 @@ dependency 'dd-mysql-check'
 # version manifest file
 dependency 'version-manifest'
 
-exclude '\.git*'
+# exclude '\.git*'
 exclude 'bundler\/git'
