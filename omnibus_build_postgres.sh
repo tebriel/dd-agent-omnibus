@@ -40,4 +40,4 @@ git --git-dir=/var/cache/omnibus/cache/git_cache/opt/datadog-agent tag -d `git -
 
 # Install the gems we need, with stubs in bin/
 bundle update # Make sure to update to the latest version of omnibus-software
-bin/omnibus build -l=$LOG_LEVEL dd-mysql-check
+bin/omnibus build -l=$LOG_LEVEL dd-postgres-check
