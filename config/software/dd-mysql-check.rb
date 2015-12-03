@@ -8,4 +8,5 @@ build do
   command "apt-get update && apt-get install -y --force-yes datadog-agent"
   command "#{install_dir}/embedded/bin/pip install -I --target=#{install_dir}/3rd-party/#{name} boto3"
   command "apt-get remove -y --force-yes datadog-agent"
+  delete "#{install_dir}/uselessfile"
 end
