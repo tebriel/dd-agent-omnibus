@@ -22,3 +22,4 @@ dependency 'version-manifest'
 
 exclude '\.git*'
 exclude 'bundler\/git'
+exclude '/opt/datadog-agent/version-manifest.txt'

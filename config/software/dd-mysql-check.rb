@@ -7,6 +7,5 @@ dependency 'pip'
 build do
   command "apt-get update && apt-get install -y --force-yes datadog-agent"
   command "#{install_dir}/embedded/bin/pip install -I --target=#{install_dir}/3rd-party/#{name} boto3"
-  exclude "/opt/datadog-agent/version-manifest.txt"
   command "apt-get remove -y --force-yes datadog-agent"
 end
