@@ -17,8 +17,5 @@ dependency 'preparation'
 
 dependency 'dd-postgres-check'
 
-# version manifest file
-dependency 'version-manifest'
-
 exclude '\.git*'
 exclude 'bundler\/git'
