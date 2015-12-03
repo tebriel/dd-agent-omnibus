@@ -17,9 +17,6 @@ dependency 'preparation'
 
 dependency 'dd-mysql-check'
 
-# version manifest file
-dependency 'version-manifest'
 
 exclude '\.git*'
 exclude 'bundler\/git'
-exclude '/opt/datadog-agent/version-manifest.txt'
