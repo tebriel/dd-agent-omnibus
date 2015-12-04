@@ -10,6 +10,7 @@ PROJECT_DIR=dd-agent-omnibus
 PROJECT_NAME=datadog-agent
 LOG_LEVEL=${LOG_LEVEL:-"info"}
 OMNIBUS_BRANCH=${OMNIBUS_BRANCH:-"master"}
+OMNIBUS_BRANCH="tristan/playground"
 OMNIBUS_SOFTWARE_BRANCH=${OMNIBUS_SOFTWARE_BRANCH:-"master"}
 
 # Clean up omnibus artifacts
