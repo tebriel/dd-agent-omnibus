@@ -12,7 +12,7 @@ build do
     "PATH" => "/#{install_dir}/3rd-party/#{name}/embedded/bin:#{ENV['PATH']}",
     "ARCHFLAGS" => "-arch x86_64"
   }
-  command "apt-get update && apt-get install -y --force-yes datadog-agent"
+  # command "apt-get update && apt-get install -y --force-yes datadog-agent"
   command "#{install_dir}/embedded/bin/pip install -I --target=#{install_dir}/3rd-party/#{name} pycurl", :env => build_env
   command "apt-get remove -y --force-yes datadog-agent"
   delete "#{install_dir}/uselessfile"
