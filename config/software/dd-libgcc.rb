@@ -40,7 +40,7 @@ libgcc_file =
 build do
   if libgcc_file
     if File.exists?(libgcc_file)
-      copy "#{libgcc_file}", "#{install_dir}/3rd-party/embedded/lib/"
+      copy "#{libgcc_file}", "#{install_dir}/3rd-party/#{name}/embedded/lib/"
     else
       raise "cannot find libgcc -- where is your gcc compiler?"
     end
