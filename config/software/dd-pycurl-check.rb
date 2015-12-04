@@ -5,7 +5,7 @@ dependency 'python'
 dependency 'pip'
 dependency "curl"
 dependency "gdbm" if (ohai['platform'] == "mac_os_x" or ohai['platform'] == "freebsd" or ohai['platform'] == "aix")
-dependency "libgcc" if (ohai['platform'] == "solaris2" and Omnibus.config.solaris_compiler == "gcc")
+dependency "dd-libgcc" if (ohai['platform'] == "solaris2" and Omnibus.config.solaris_compiler == "gcc")
 
 build do
   build_env = {
