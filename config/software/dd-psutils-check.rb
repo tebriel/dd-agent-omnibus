@@ -1,4 +1,4 @@
-name "dd-postgres-check"
+name "dd-psutils-check"
 default_version "0.0.1"
 
 dependency 'python'
