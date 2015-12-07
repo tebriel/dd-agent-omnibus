@@ -15,7 +15,7 @@
 # limitations under the License.
 #
 
-name "curl"
+name "dd-curl"
 default_version "7.41.0"
 
 dependency "zlib"
