@@ -9,7 +9,7 @@ dependency "libgcc" if (ohai['platform'] == "solaris2" and Omnibus.config.solari
 
 build do
   build_env = {
-    "PATH" => "/#{install_dir}/3rd-party/#{name}/embedded/bin:#{ENV['PATH']}",
+    "PATH" => "/#{install_dir}/embedded/bin:#{ENV['PATH']}",
     "ARCHFLAGS" => "-arch x86_64"
   }
   # command "apt-get update && apt-get install -y --force-yes datadog-agent"
