@@ -157,7 +157,7 @@ dependency 'snakebite'
 # be rebuilt (if put above, it would dirty the cache of the dependencies below
 # and trigger a useless rebuild of many packages)
 dependency 'datadog-gohai'
-dependency 'dd-tcp-rtt'
+dependency 'datadog-rtt'
 
 # Datadog agent
 dependency 'datadog-agent'
