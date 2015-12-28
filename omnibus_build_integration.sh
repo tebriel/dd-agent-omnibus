@@ -7,15 +7,8 @@
 #
 ###########################
 
-# FIXME: move this upstream and set as env variable?
-OMNIBUS_RUBY_BRANCH="tristan/extend-package"  # used upstream only
-OMNIBUS_BRANCH="tristan/sdk"
-CORE_INTEGRATIONS_BRANCH="tristan/twemproxy"
-
-
 PROJECT_DIR=/dd-agent-omnibus
 CORE_INTEGRATIONS_DIR=/core-integrations
-
 
 echo "Clean up generated files"
 rm -rf /var/cache/*
@@ -45,4 +38,5 @@ git reset --hard origin/$OMNIBUS_BRANCH
 echo "execute scripts"
 cd $PROJECT_DIR
 bundle update
+# FIXME: build all integrations when no integration name is passed
 resources/datadog-integrations/omnibus_build_integration.sh $1
