@@ -78,6 +78,9 @@ if [ "$DISTRIBUTION" != "Darwin" ]; then
   chown -R dd-agent:root /usr/bin/dd-agent
   chmod 755 /usr/bin/dd-agent
 
+  # Configuring capabilities for DD-TCP-RTT
+  setcap cap_net_raw=eip /opt/datadog-agent/bin/dd-tcp-rtt
+
   # The configcheck call will return zero if the config is valid, which means we
   # can restart the agent without taking the risk to trigger an error in the
   # postinst script . If the config file doesn't exist (RETVAL=3), the user is
