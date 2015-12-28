@@ -8,5 +8,3 @@ echo "generating files"
 echo "building project"
 bin/omnibus build dd-$NAME-check
 
-
-(echo '<% name="Joe"; quality="fantastic" %>' && cat 1.erb) | erb
