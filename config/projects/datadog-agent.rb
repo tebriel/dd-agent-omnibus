@@ -83,10 +83,10 @@ if linux?
   # SysVInit service file
   if redhat?
     extra_package_file '/etc/rc.d/init.d/datadog-agent'
-    dependency 'libcap2'
+    runtime_dependency 'libcap2'
   else
     extra_package_file '/etc/init.d/datadog-agent'
-    dependency 'libcap2-bin'
+    runtime_dependency 'libcap2-bin'
   end
 
   # Supervisord config file for the agent
