@@ -16,6 +16,9 @@ rm -f /etc/init.d/datadog-agent
 rm -rf /etc/dd-agent
 rm -rf /opt/datadog-agent
 
+# remove any installed datadog-agent
+apt-get remove datadog-agent
+
 # If an RPM_SIGNING_PASSPHRASE has been passed, let's import the signing key
 if [ -n "$RPM_SIGNING_PASSPHRASE" ]; then
   gpg --import /keys/RPM-SIGNING-KEY.private
