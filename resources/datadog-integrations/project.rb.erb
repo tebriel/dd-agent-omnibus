@@ -1,5 +1,4 @@
-# FIXME: use templates
-name 'dd-twemproxy-check'
+name 'dd-<%= name %>-check'
 maintainer 'Datadog Packages <package@datadoghq.com>'
 homepage 'http://www.datadoghq.com'
 install_dir '/opt/datadog-agent'
@@ -9,7 +8,7 @@ build_version Omnibus::BuildVersion.semver
 
 
 dependency 'preparation'  # creates required build directories
-dependency 'dd-twemproxy'
+dependency 'dd-<%= name %>'
 
 extends_package 'datadog-agent'
 

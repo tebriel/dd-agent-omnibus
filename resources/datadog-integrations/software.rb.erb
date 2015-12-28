@@ -1,0 +1,12 @@
+# FIXME: use templates
+name "dd-<%= name %>"
+# FIXME: version
+default_version "0.0.1"
+
+build do
+  mkdir "#{install_dir}/3rd-party/<%= name %>"
+  # FIXME: blacklist / whitelist files
+  copy "/core-integrations/<%= name %>/*", "#{install_dir}/3rd-party/<%= name %>"
+  command "#{install_dir}/embedded/bin/pip install -I --target=#{install_dir}/3rd-party/<%= name %> -r #{install_dir}/3rd-party/<%= name %>/requirements.txt"
+  delete "#{install_dir}/uselessfile"
+end
