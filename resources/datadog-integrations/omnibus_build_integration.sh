@@ -2,8 +2,8 @@ NAME=$1
 echo "building integration $NAME"
 
 echo "generating files"
-(echo '<% name="$1" %>' && resources/datadog-integrations/project.rb.erb) | erb > config/projects/dd-$NAME-check.rb
-(echo '<% name="$1" %>' && resources/datadog-integrations/software.rb.erb) | erb > config/software/dd-$NAME.rb
+(echo '<% name="$1" %>' && cat resources/datadog-integrations/project.rb.erb) | erb > config/projects/dd-$NAME-check.rb
+(echo '<% name="$1" %>' && cat resources/datadog-integrations/software.rb.erb) | erb > config/software/dd-$NAME.rb
 
 echo "building project"
 bin/omnibus build dd-$NAME-check
