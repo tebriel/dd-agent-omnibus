@@ -12,4 +12,6 @@ dependency 'dd-<%= name %>'
 
 extends_package 'datadog-agent'
 
+extra_package_file '/etc/dd-agent/conf.d/<%= name %>.yaml.example'
+
 exclude '\.git*'  # FIXME: is this needed?
