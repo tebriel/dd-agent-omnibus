@@ -6,7 +6,8 @@ default_version "0.0.1"
 build do
   mkdir "#{install_dir}/3rd-party/<%= name %>"
   # FIXME: blacklist / whitelist files
-  copy "/core-integrations/<%= name %>/*", "#{install_dir}/3rd-party/<%= name %>"
+  copy "/core-integrations/<%= name %>/check.py", "#{install_dir}agent/checks.d/<%= name %>.py"
+  copy "/core-integrations/<%= name %>/conf.yaml.example", "/etc/dd-agent/conf.d/<%= name %>.yaml.example"
   command "#{install_dir}/embedded/bin/pip install -I --target=#{install_dir}/3rd-party/<%= name %> -r #{install_dir}/3rd-party/<%= name %>/requirements.txt"
   delete "#{install_dir}/uselessfile"
 end
