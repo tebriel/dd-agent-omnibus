@@ -8,6 +8,6 @@ build do
   # FIXME: blacklist / whitelist files
   copy "/core-integrations/<%= name %>/check.py", "#{install_dir}/agent/checks.d/<%= name %>.py"
   copy "/core-integrations/<%= name %>/conf.yaml.example", "/etc/dd-agent/conf.d/<%= name %>.yaml.example"
-  command "#{install_dir}/embedded/bin/pip install -I --target=#{install_dir}/3rd-party/<%= name %> -r #{install_dir}/3rd-party/<%= name %>/requirements.txt"
+  command "#{install_dir}/embedded/bin/pip install -I --target=#{install_dir}/3rd-party/<%= name %> -r /core-integrations/<%= name %>/requirements.txt"
   delete "#{install_dir}/uselessfile"
 end

@@ -43,7 +43,7 @@ namespace :agent do
 
   desc 'Build an integration'
   task :'build-integration', [:integration_name] do |t, args|
-    Rake::Task["agent:clean"].invoke
+    Rake::Task["agent:dev-clean"].invoke
     Rake::Task["env:import-rpm-key"].invoke
     Rake::Task["agent:pull-omnibus"].invoke
     Rake::Task["agent:pull-core-integration"].invoke
